@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.xberry.R
 import com.xberry.common.recyclerview.XBerryAdapter.XBerryViewHolder
 
-class XBerryAdapter(private val items: List<String>) : RecyclerView.Adapter<XBerryViewHolder>() {
+class XBerryAdapter(private val items: MutableList<String>) : RecyclerView.Adapter<XBerryViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): XBerryViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_layout, parent, false)
@@ -29,4 +29,11 @@ class XBerryAdapter(private val items: List<String>) : RecyclerView.Adapter<XBer
             textView.setBackgroundColor(itemView.resources.getColor(R.color.teal_700, itemView.context.theme))
         }
     }
+
+    fun moveItem(fromPosition: Int, toPosition: Int) {
+        val item = items.removeAt(fromPosition)
+        items.add(toPosition, item)
+        notifyItemMoved(fromPosition, toPosition)
+    }
+
 }

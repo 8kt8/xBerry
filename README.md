@@ -21,7 +21,7 @@ A custom `LayoutManager` and `SnapHelper` for Android's `RecyclerView` that supp
 
 ### Implementing the Custom LayoutManager
 
-Create a custom `LayoutManager` that extends `RecyclerView.LayoutManager`. This manager will arrange items in a grid horizontally, supporting pagination and right-to-left layouts.
+Create a custom `XBerryGridLayoutManager` that extends `RecyclerView.LayoutManager`. This manager will arrange items in a grid horizontally, supporting snap pagination and drag and drop animation.
 
 ```kotlin
         val gridLayoutManager = XBerryGridLayoutManager(rows = 2, columns = 5)
@@ -40,4 +40,4 @@ Create a custom `LayoutManager` that extends `RecyclerView.LayoutManager`. This 
 
 ## Demo Video
 
-[Watch the demo video](https://github.com/8kt8/xBerry/blob/main/demo.webm)
+![Watch the demo video](demo.gif)
